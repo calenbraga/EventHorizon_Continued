@@ -1,13 +1,13 @@
-## Interface: 100002
+## Interface: 110002
 ## Title: EventHorizon_|c99990000DeathKnight|r
-## Author: Brusalk
+## Author: Brusalk et al
+## Version: 1.11.0.2-alpha
 ## Dependencies: EventHorizon
 ## LoadOnDemand: 1
 ## OptDeps: 
 ## SavedVariables: 
 
 config.lua
-myconfig.lua
 
 # Custom myconfigs not in existing folder
 # You can specify class configs in the below files, but due to the Curse Client deleting all folders before unzip
