@@ -9,8 +9,109 @@ function EventHorizon:InitializeClass()
   -- Holy
   -- ---------------------------------------
 
+  -- Crusader Strike
+   self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 3,
+    cooldown = 35395,
+  })
   
+  -- Judgment
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 18,
+    cooldown = 20271,
+    debuff = 196941,
+  })
+
+  -- Holy Shock
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 10,
+    cooldown = 20473,
+    keepIcon = true,
+    cast = {20473, 19750, 82326},
+  })
+
+  -- Light of Dawn
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 40,
+    cooldown = 85222,
+  })
+
+  -- Tyr's Deliverance
+  self:newSpell({
+    requiredTree = 1,
+    requiredArtifactTalent = 200652,
+    cooldown = 200652,
+    playerbuff = 200652,
+    auraunit = usemouseover and 'mouseover' or 'target',
+  })
  
+  -- Bestow Faith
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 1,
+    cooldown = 223306,
+  })
+
+  -- Beacon of Virtue
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 21,
+    cooldown = 200025,
+    playerbuff = 200025,
+    auraunit = usemouseover and 'mouseover' or 'target',
+  })
+  
+  -- Holy Prism
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 15,
+    cooldown = 114165,
+  })
+ 
+  -- Light's Hammer
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 2,
+    cooldown = 114158,
+  })
+
+  -- Holy Avenger
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 14,
+    cooldown = 105809,
+    playerbuff = 105809,
+  })
+  
+  -- Avenging Wrath
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 80,
+    cooldown = 31842,
+    playerbuff = 31842,
+  })
+  
+  -- Aura Mastery
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 70,
+    cooldown = 31821,
+    playerbuff = 31821,
+  })
+    
+  -- Rule of Law
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 6,
+    playerbuff = 214202,
+    recharge = 214202,
+  })
+	
+   
   -- ---------------------------------------
   -- Protection
   -- ---------------------------------------
