@@ -3143,7 +3143,6 @@ local function SetSpellAttributes(spellframe,config)
     spellframe.castsuccess = {}
     spellframe.timerAfterCast = timerAfterCast
 
-    local sn = GetSpellInfo(config.channeled)
     if type(timerAfterCast[1]) == "number" then
       local sn = GetSpellInfo(timerAfterCast[1])
       otherids[sn] = {isTimer = true, pandmicCPSource = false}
