@@ -6,48 +6,32 @@ function EventHorizon:InitializeClass()
   self.config.past = -1.5 -- Number of seconds to show in the past. Default = -3
   self.config.future = 12 -- Number of seconds to show in the future. Default = 12
 
---  print('Shaman init')
---[[
+  -- ---------------------------------------
   -- Elemental
-
-  -- Lava Burst recharge, Lava Surge proc and spell casts.
-  self:newSpell({
-    requiredTree = 1,
-    cast = {188196, 188443, 51505, 51514, 8004},
-    playerbuff = 77762,
-    recharge = 51505,
-     barcolors   = {
-     recharge    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {232/255, 050/255, 020/255, 0.5}
-     },
-  })
+  -- ---------------------------------------
 
   -- Flame Shock
   self:newSpell({
     requiredTree = 1,
-    requiredLevel = 3,
-    cooldown = 188389,
-    debuff = {188389, 2},
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     tick        = {222/255, 040/255, 010/255, 0.9},
-     debuffmine  = {242/255, 141/255, 010/255, 0.5}
-     },
+    debuff = 188389,
+	barcolors   = {
+     debuffmine	= {242/255, 141/255, 010/255, 0.5}
+    },
   })
 
-  -- Exposed Elements
+  -- Lava Burst recharge, Lava Surge proc and spell casts.
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 1,
- --   cooldown = 188389,
-    debuff = 260694,
-     barcolors   = {
---     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     debuffmine  = {242/255, 141/255, 010/255, 0.5}
-     },
+    cast = 51505,
+    playerbuff = 77762,
+    recharge = 51505,
+	barcolors   = {
+     recharge	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {232/255, 050/255, 020/255, 0.5}
+    },
   })
 
-  -- Elemental Blast
+--[[  -- Elemental Blast
   self:newSpell({
     requiredTree = 1,
     requiredTalent = 3,
@@ -58,428 +42,319 @@ function EventHorizon:InitializeClass()
      cooldown    = {171/255, 191/255, 181/255, 0.7},
      playerbuff  = {171/255, 070/255, 161/255, 0.6}
      },
-  })
-  -- 198067 Fire Elemental at half height.
-  -- Icefury
+  })--]]
+  
+--[[  -- Icefury
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 18,
-    cast = 210714,
-    cooldown = 210714,
-    playerbuff = 210714,
-  })
+    playerbuff = 462816,
+	barcolors   = {
+     playerbuff	= {192/255, 192/255, 192/255, 0.6},
+    },
+  })]]--
 
-  -- Stormkeeper CD at half height for less ambiguity.
+  -- Master of the Elements
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 20,
-    cast = 191634,
-    cooldown = 191634,
-    smallCooldown = true,
-    playerbuff = 191634,
-     barcolors   = {
-     cooldown    = {202/255, 161/255, 055/255, 0.7},
-     playerbuff  = {080/255, 141/255, 191/255, 0.6}
-     },
-  })
-
-  -- Liquid Magma Totem, currently unable to track totem uptime
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 12,
-    cooldown = 192222,
-  })
-
-  -- Totem Mastery
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 6,
-    playerbuff = {{202192}, {210652}, {210659}, {210658}},
-    icon = 210643,
-     barcolors   = {
---     cooldown    = {171/255, 191/255, 181/255, 0.7},
---     playerbuff  = {232/255, 191/255, 181/255, 0.4}
-     },
-  })
-
-  -- Master of the Elements new buff 260734
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 5,
-    cooldown = 16166,
+	requiredTalent = 16166,
     playerbuff = 16166,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
+	barcolors   = {
+     playerbuff	= {000/255, 090/255, 220/255, 0.4}
+    },
+  })
+  
+--[[  -- Elemental Equilibrium
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 378271,
+    playerbuff = 378275,
+  })
+  
+  -- Power of the Malstrom
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 191861,
+    playerbuff = 191861,
+  })
+  
+  -- Surge of Power
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 262303,
+    playerbuff = 285514,
+  })--]]
+  
+  -- Ascendance passive
+  self:newSpell({
+	requiredTree = 1,
+	requiredTalent = 378270,
+	requiredTalentUnselected = 114050,
+	playerbuff = 114050,
+	barcolors   = {
+     playerbuff	= {232/255, 191/255, 181/255, 0.4}
+    },
+  })
+  
+ --[[ -- Echoes of the Sundering
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 384087,
+    playerbuff = 384088,
+  })
+  
+  -- Tempest
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 454009,
+	playerbuff = {454015, 470532},		--does not work
+  })
+  
+  -- Primordial Wave
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 375982,
+    cooldown = 375982,
+  })
+
+	-- always comes before primordial wave
+--  -- Liquid Magma Totem, currently unable to track totem uptime
+--  self:newSpell({
+--    requiredTree = 1,
+--    requiredTalent = 192222,
+--    cooldown = 192222,
+--  })
+
+  -- Nature's Swiftness
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 378081,
+    cooldown = 378081,
+    playerbuff = 378081,
+  })
+  
+--  -- Ancestral Swiftness
+--  self:newSpell({
+--    requiredTree = 1,
+--	requiredTalent = 378081,
+--    cooldown = 443545,
+--    playerbuff = 443545,
+--  })]]--
+  
+  -- Stormkeeper
+  self:newSpell({
+    requiredTree = 1,
+	requiredTalent = 191634,
+    cooldown = 191634,
+    playerbuff = 191634,
+	barcolors   = {
      playerbuff  = {232/255, 191/255, 181/255, 0.4}
-     },
+    },
+  })
+  
+  -- Fireblood			--dark iron racial
+  self:newSpell({
+    requiredTree = 1,
+    cooldown = 265221,
+	playerbuff = 273104,
+  })
+  
+  -- Fire Elemental
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 198067,
+    cooldown = 198067,
+  })
+  
+  -- Storm Elemental
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 192249,
+    cooldown = 192249,
   })
 
   -- Ascendance
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 19,
+    requiredTalent = 114050,
     cooldown = 114050,
     playerbuff = 114050,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {232/255, 191/255, 181/255, 0.4}
-     },
-  })
-]]--
-
--- Enhancement
-
-  -- Stormstrike
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 17364,
-    playerbuff = 201846,
-     barcolors   = {
-     playerbuff  = {010/255, 010/255, 171/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {232/255, 191/255, 181/255, 0.4}
+    },
   })
 
-  -- Frost Shock
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 196840,
-    playerbuff = 384357,
-     barcolors   = {
-     playerbuff  = {192/255, 192/255, 192/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
-  })
 
-  -- Crash Lightning
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 187874,
-    playerbuff = 187878,
-  })
 
-  -- Ice Strike
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 342240,
---    playerbuff = 384357,
-     barcolors   = {
---     playerbuff  = {192/255, 192/255, 192/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
-  })
-
-  -- Flame Shock
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 188389,
-    debuff = {188389, 2},
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     tick        = {222/255, 040/255, 010/255, 0.9},
-     debuffmine  = {242/255, 141/255, 010/255, 0.5}
-     },
-  })
-
-  -- Lava Lash
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 60103,
---    playerbuff = 194084,
-     barcolors   = {
---     playerbuff  = {252/255, 141/255, 040/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
-  })
+  -- ---------------------------------------
+  -- Enhancement
+  -- ---------------------------------------
 
   -- Maelstrom Weapon
   self:newSpell({
     requiredTree = 2,
---    cooldown = 17364,
     playerbuff = 344179,
-     barcolors   = {
+	barcolors   = {
      playerbuff  = {010/255, 010/255, 171/255, 0.6},
---     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
+    },
   })
 
+-- Flame Shock
+  self:newSpell({
+    requiredTree = 2,
+    cooldown = 188389,
+    debuff = 188389,
+	barcolors   = {
+     debuffmine  = {242/255, 141/255, 010/255, 0.5}
+    },
+  })
+  
+  -- Lava Lash
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 201900,
+    cooldown = 60103,
+	playerbuff = 215785,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.6},
+	 playerbuff	= {252/255, 141/255, 040/255, 0.6},
+    },
+  })
+  
+  -- Voltaic Blaze
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 470053,
+	playerbuff = 470053,
+	barcolors   = {
+     debuffmine  = {242/255, 141/255, 010/255, 0.5}
+    },
+  })
+  
+  -- Ice Strike
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 466467,
+	playerbuff = 466469,
+	barcolors   = {
+     playerbuff	= {192/255, 192/255, 192/255, 0.6},
+    },
+  })
+  
+  -- Feral Spirits passive
+  self:newSpell({
+    requiredTree = 2,
+    requiredTalent = 469314,
+	playerbuff = 333957,
+  })
+  
+--[[  -- Tempest
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 454009,
+	playerbuff = {454015, 470532},		--does not work
+  })
+
+  -- Surging Totem
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 444995,
+	cooldown = 444995,
+  })]]--
+
+  -- Crash Lightning
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 187874,
+    cooldown = 187874,
+    playerbuff = 187878,
+  })
+  
+  -- Primordial Wave
+  self:newSpell({
+    requiredTree = 2,
+    requiredTalent = 375982,
+	requiredTalentUnselected = 1218047,
+    cooldown = 375982,
+	playerbuff = 375986,
+  })
+  
+  -- Primordial Wave + Primordial Storm
+  self:newSpell({
+    requiredTree = 2,
+    requiredTalent = 1218047,
+    cooldown = 375982,
+	playerbuff = {375986, 1218125},		--does not work
+  })
+  
   -- Sundering
   self:newSpell({
     requiredTree = 2,
+    requiredTalent = 197214,
     cooldown = 197214,
   })
-
-  -- Thunderstorm
+  
+  -- Feral Spirits
   self:newSpell({
     requiredTree = 2,
-    requiredTalent = 51490,
-    cooldown = 51490,
-  })
-
-
-
---[[
-  -- Rockbiter with Hot Hand
-  self:newSpell({
-    requiredTree = 2,
-    recharge = 193786,
-    playerbuff = 215785,
-     barcolors   = {
-     playerbuff  = {222/255, 080/255, 010/255, 0.6},
-     recharge    = {171/255, 191/255, 181/255, 0.3}
-     },
-  })
-
-  -- Flametongue
-  self:newSpell({
-    requiredTree = 2,
-    requiredTalentUnselected = 10,
-    cooldown = 193796,
-    playerbuff = 194084,
-     barcolors   = {
-     playerbuff  = {252/255, 141/255, 040/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
-  })
-
-  -- Searing Assault
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 193796,
-    debuff = {268429, 2},
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     tick        = {222/255, 040/255, 010/255, 0.9},
-     debuffmine  = {252/255, 141/255, 040/255, 0.6}
-     },
-  })
-
-  -- Frostbrand - only with Hailstorm talented.
-  self:newSpell({
-    requiredTree = 2,
-    playerbuff = 196834,
-     barcolors   = {
-     playerbuff  = {080/255, 111/255, 151/255, 0.5},
-     },
-  })
-
-  -- Overcharge
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 187837,
-  })
-
-  -- Earthen Spike
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 188089,
-    debuff = 188089,
-     barcolors   = {
-     cooldown    = {111/255, 090/255, 050/255, 0.4},
-     debuffmine  = {101/255, 080/255, 040/255, 0.6}
-     },
-  })
-
-  -- Fury of Air and Feral Spirit cooldown at half height.
-  self:newSpell({
-    requiredTree = 2,
+    requiredTalent = 51533,
     cooldown = 51533,
-    smallCooldown = true,
-    playerbuff = 197211,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {212/255, 212/255, 242/255, 0.4}
-     },
+	playerbuff = 333957,
   })
-
-  -- Ascendance
+  
+  -- Doom Winds
   self:newSpell({
     requiredTree = 2,
+    requiredTalent = 384352,
+    cooldown = 384352,
+	playerbuff = 384352,
+  })  
+
+  -- Ascendence Buff
+  self:newSpell({
+    requiredTree = 2,
+    requiredTalent = 378270,
+	playerbuff = 114051,
+	barcolors   = {
+     playerbuff  = {252/255, 191/255, 181/255, 0.6}
+    },
+  })  
+
+  -- Ascendence Cooldown
+  self:newSpell({
+    requiredTree = 2,
+    requiredTalent = 114051,
     cooldown = 114051,
-    playerbuff = 114051,
-     barcolors   = {
+	playerbuff = 114051,
+	barcolors   = {
      cooldown    = {222/255, 212/255, 191/255, 0.3},
      playerbuff  = {252/255, 191/255, 181/255, 0.6}
-     },
-  })
-]]--
-
---[[ seems to have been removed but the spell still exists in the Db, unlike others which were removed, so I'm leaving it here for future changes.
-  -- Windsong
+    },
+  })  
+  
+  -- Berserking			--Troll Racial
   self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 1,
-    cooldown = 201898,
-    playerbuff = 201898,
-     barcolors   = {
-     playerbuff  = {151/255, 242/255, 242/255, 0.6},
-     cooldown    = {171/255, 191/255, 181/255, 0.6}
-     },
-  })
-]]--
+  requiredTree = 2,
+    cooldown = 26297,
+	playerbuff = 26297,
+  }) 
 
---[[
+
+
+  -- ---------------------------------------
   -- Restoration
+  -- ---------------------------------------
 
-  -- Lava Burst recharge, Lava Surge proc and spell casts.
-  self:newSpell({
-    requiredTree = 3,
-    cast = {403, 421, 1064, 8004, 51505, 51514, 73920, 77472, 207778},
-    playerbuff = 77762,
-    recharge = 51505,
-     barcolors   = {
-     recharge    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {232/255, 050/255, 020/255, 0.5}
-     },
-  })
 
-  -- Flame Shock
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 3,
-    cooldown = 188838,
-    debuff = {188838, 3},
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     tick        = {222/255, 040/255, 010/255, 0.9},
-     debuffmine  = {242/255, 141/255, 010/255, 0.5}
-     },
-  })
 
-  -- Riptide
+  -- ---------------------------------------
+  -- Shared Cooldowns
+  -- ---------------------------------------
+  
+  -- Bloodlust
   self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 10,
-    recharge = 61295,
-    playerbuff = {61295, 3},
-    auraunit = 'mouseover' or 'target',
-     barcolors   = {
-     recharge    = {171/255, 191/255, 181/255, 0.7},
-     tick        = {040/255, 181/255, 020/255, 0.9},
-     playerbuff  = {030/255, 090/255, 090/255, 0.6}
-     },
-  })
+    cooldown = 2825,
+	playerbuff = 2825,
+  })   
 
-  -- Healing Rain
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 40,
-    cooldown = 73920,
-     barcolors   = {
-     cooldown    = {010/255, 101/255, 232/255, 0.7},
-     playerbuff  = {080/255, 181/255, 131/255, 0.5}
-     },
-  })
-
-  -- Unleashed Life
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 2,
-    cooldown = 73685,
-    playerbuff = 73685,
-     barcolors   = {
-     cooldown    = {090/255, 191/255, 191/255, 0.7},
-     playerbuff  = {080/255, 181/255, 131/255, 0.5}
-     },
-  })
-
-  -- Healing Stream Totem
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 14,
-    recharge = 5394,
---    totem = 5394,
-     barcolors   = {
-     recharge    = {080/255, 161/255, 202/255, 0.7},
-     playerbuff  = {080/255, 161/255, 202/255, 0.4}
-     },
-  })
-
-  -- Tidal Waves buff and Gift of the Queen (artifact) cooldown at half height, if you have it.
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 34,
-    playerbuff = 53390,
-    cooldown = 207778,
-    smallCooldown = true,
-     barcolors   = {
-     cooldown    = {202/255, 161/255, 055/255, 0.7},
-     },
-  })
-
-  -- Earthen Shield Totem
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 14,
-    cooldown = 198838,
-    playerbuff = 201633,
-    auraunit = 'mouseover' or 'target',
---    totem = 198838,
-     barcolors   = {
-     cooldown    = {040/255, 090/255, 090/255, 0.6},
-     playerbuff  = {232/255, 090/255, 242/255, 0.7}
-     },
-  })
-
-  -- Ancestral Guidance
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 11,
-    cooldown = 108281,
-    playerbuff = 108281,
-     barcolors   = {
-     cooldown    = {16/255, 252/255, 252/255, 0.6},
---     playerbuff  = {232/255, 191/255, 181/255, 0.4}
-     },
-  })
-
-  -- Healing Tide Totem
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 80,
-    cooldown = 108280,
---    totem = 108280,
-     barcolors   = {
-     cooldown    = {151/255, 242/255, 222/255, 0.7},
-     playerbuff  = {151/255, 242/255, 222/255, 0.4}
-     },
-  })
-
-  -- Ascendance
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 19,
-    cooldown = 114052,
-    playerbuff = 114052,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {232/255, 191/255, 181/255, 0.4}
-     },
-  })
-]]--
--- Utility spells or long cooldowns, hidden by default as there are already many bars for this spec. Remove the comment "--[[ ]]--" block lines to show the ones you'd like.
---[[
-  -- Spiritwalker's Grace
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 34,
-    cooldown = 79206,
-    playerbuff = 79206,
-  })
-]]--
-
---[[
-  -- Ancestral Protection Totem
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 13,
-    cooldown = 207399,
-    playerbuff = 207498,
-    auraunit = 'mouseover' or 'target',
---    totem = 207399,
-     barcolors   = {
-     playerbuff  = {232/255, 010/255, 010/255, 0.7}
-     },
-  })
-]]--
 end

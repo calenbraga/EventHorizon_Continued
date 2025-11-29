@@ -8,380 +8,187 @@ function EventHorizon:InitializeClass()
   self.config.past = -1.5 -- Number of seconds to show in the past. Default = -3
   self.config.future = 12 -- Number of seconds to show in the future. Default = 12
 
-  -- Beastmaster Bars
+  -- ---------------------------------------
+  -- Beastmaster
+  -- ---------------------------------------
   
-        -- Barbed Shot
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 10,
-    playerbuff = {272790, 1.6 },
-    recharge = 217200,
-    auraunit = 'pet',
-    refreshable = true,
-    barcolors = {
-      cooldown  = {255/255, 003/255, 062/255, 0.5},
-      playerbuff  = {171/255, 191/255, 181/255, 0.5}
-    }
-  })
   
-    -- Murder of Crows
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 12,
-    debuff = 131894,
-    cooldown = 131894,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {029/255, 041/255, 081/255, 0.6}
-    }
-  })
   
-    -- Aspect of the Wild
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 26,
-    playerbuff = 193530,
-    cooldown = 193530,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {000/255, 141/255, 003/255, 0.7}
-    }
-  })
-  
-    -- Bestial Wrath
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 40,
-    playerbuff = 19574,
-    cooldown = 19574,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {171/255, 000/255, 040/255, 0.7}
-    }
-  })
+  -- ---------------------------------------
+  -- Marksmanship
+  -- ---------------------------------------
 
-  -- Kill Command
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 10,
-    cooldown = 34026,
-    barcolors = {
-      cooldown  = {232/255, 171/255, 131/255, 0.5},
-    }
-  })
-  
-    -- Chimaera Shot
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 6,
-    cooldown = 53209,
-    barcolors = {
-      cooldown  = {141/255, 000/255, 242/255, 0.5},
-    }
-  })
-
-  -- Dire Beast
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 12,
-    requiredTalent = 3,
-    playerbuff = 217200,
-    cooldown = 120679,
-    auraunit = 'pet',
-    refreshable = true,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {255/255, 003/255, 062/255, 0.5}
-    }
-  })
-
-  -- Multishot with Titanstrike CD at half height
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 16,
-    playerbuff = 115939,
-	smallCooldown = true,
-    auraunit = 'pet',
-    barcolors = {
-      cooldown  = {202/255, 161/255, 055/255, 0.5},
-      playerbuff  = {136/255, 045/255, 023/255, 0.7}
-    }
-  })
-
-  -- Barrage
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 17,
-    playerbuff = {8936,2},
-    cooldown = 120360,
-    channel = 120360,
-    barcolors = {
-      casting    = {027/255, 147/255, 228/255, 1.0},
-      cooldown  = {171/255, 191/255, 181/255, 0.5}
-    }
-  })
-
-  -- Stampede
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 18,
-    cooldown = 201430,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-    }
-  })
-  
-  -- Spitting Cobra
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 21,
-    playerbuff = 194407,
-    cooldown = 194407,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {212/255, 020/255, 141/255, 0.6}
-    }
-  })
-
-
-  --Marksmanship Bars
-  
-      -- Murder of Crows
+  -- Precise Shots
   self:newSpell({
     requiredTree = 2,
-    requiredTalent = 3,
-    debuff = 131894,
-    cooldown = 131894,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {029/255, 041/255, 081/255, 0.6}
-    }
-  })
-  
-            -- Aimed Shot
-  self:newSpell({
-    requiredTree = 2,
-    requiredLevel = 10,
-	   playerbuff = 194594,
-    recharge = 19434,
-	cast = 19434,
-    barcolors = {
-      casting  = {255/255, 003/255, 062/255, 0.5},
-      cooldown  = {171/255, 191/255, 181/255, 0.5}
-    }
-  })
-  
-      -- Rapid Fire
-  self:newSpell({
-    requiredTree = 2,
-    playerbuff = {257044,0.24},
-    cooldown = 257044,
-    channel = 257044,
-    barcolors = {
-      casting    = {027/255, 147/255, 228/255, 1.0},
-      cooldown  = {171/255, 191/255, 181/255, 0.5}
-    }
-  })
-  
-    -- Precise Shots
-  self:newSpell({
-    requiredTree = 2,
-    playerbuff = {260242, 1.6 },
-    barcolors = {
-      playerbuff  = {212/255, 020/255, 141/255, 0.6}
+	requiredTalent = 260240,
+    playerbuff = 260242,
+	refreshable = true,
+	barcolors = {
+     playerbuff	= {212/255, 020/255, 141/255, 0.6}
     }
   })
 
-  -- Steady Focus with Steady Shot CD
+  -- Streamline
   self:newSpell({
     requiredTree = 2,
-    requiredTalent = 10,
-    playerbuff = {193533, 1.6 },
-	cast = 56641,
-    barcolors = {
-	  casting  = {171/255, 191/255, 181/255, 0.7},
-      playerbuff  = {240/255, 225/255, 048/255, 0.6}
-    }
+	requiredTalent = 260367,
+    playerbuff = 342076,
+	refreshable = true,
   })
   
-    -- Steady Focus with Lethal Shots
+  -- Spotter's Mark
   self:newSpell({
     requiredTree = 2,
-	requiredTalent = 16,
-	cast = 56641,
-	playerbuff = 260395,
-    barcolors = {
-	  casting  = {240/255, 225/255, 048/255, 0.6},
-	  playerbuff  = {136/255, 045/255, 023/255, 0.7}
-    }
+	requiredTalent = 466867,
+    debuff = 466872,
   })
   
-      -- Steady Focus
+  -- Lock & Load
   self:newSpell({
     requiredTree = 2,
-	requiredTalent = {17, 18},
-	cast = 56641,
-    barcolors = {
-	  casting  = {240/255, 225/255, 048/255, 0.6}
+	requiredTalent = 194595,
+    playerbuff = 194595,
+  })
+  
+  -- Deathblow
+  self:newSpell({
+    requiredTree = 2,
+	requiredTalent = 343248,
+	playerbuff = 343248,
+	barcolors = {
+     playerbuff	= {215/255, 000/255, 000/255, 0.5},
     }
   })
 
-  -- Barrage
+  -- Trick Shot
   self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 17,
-    playerbuff = {8936,2},
-    cooldown = 120360,
-    channel = 120360,
-    barcolors = {
-      casting    = {027/255, 147/255, 228/255, 1.0},
-      cooldown  = {171/255, 191/255, 181/255, 0.5}
-    }
+	requiredTree = 2,
+	requiredTalent = 257621,
+	playerbuff = 257622,
   })
 
---[[
   -- Explosive Shot
   self:newSpell({
     requiredTree = 2,
-    requiredTalent = 10,
+	requiredTalent = 212431,
     cooldown = 212431,
-    barcolors = {
-      cooldown  = {255/255, 168/255, 018/255, 0.5},
+	debuff = 212431,
+	barcolors = {
+     cooldown	= {255/255, 168/255, 018/255, 0.5},
     }
   })
---]]
-
---[[ included as a half height CD under Hunter's mark above, that was Windburst but I put that on it's onw bar now.
-  -- Sentinel
+  
+  -- Volley
   self:newSpell({
     requiredTree = 2,
-    requiredTalent = 11,
-    cooldown = 206817,
-    debuff = {185987, 6},
-    icon = 206817,
-    barcolors = {
-      cooldown  = {250/255, 245/255, 220/255, 0.5},
-      debuffmine  = {054/255, 059/255, 143/255, 0.7}
-    }
+	requiredTalent = 260243,
+    cooldown = 260243,
+	playerbuff = 260243,
   })
-]]--
 
   -- Trueshot
   self:newSpell({
     requiredTree = 2,
-    requiredLevel = 40,
-    cooldown = 193526,
-    playerbuff = 193526,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {191/255, 242/255, 232/255, 0.7}
+	requiredTalent = 288613,
+    cooldown = 288613,
+    playerbuff = 288613,
+	barcolors = {
+     cooldown	= {171/255, 191/255, 181/255, 0.5},
+     playerbuff	= {191/255, 242/255, 232/255, 0.7}
     }
   })
-
   
- -- Survival Bars
+  
+  
+  -- ---------------------------------------
+  -- Survival
+  -- ---------------------------------------
 
-  -- Serpent Sting
+  -- Tip of the Spear
   self:newSpell({
     requiredTree = 3,
-    requiredLevel = 20,
-    cooldown = 259491,
-    debuff = {259491, 1.6},
+	requiredTalent = 260285,
+    playerbuff = 260286,
 	refreshable = true,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {000/255, 141/255, 003/255, 0.7}
-    },
   })
   
-      -- Kill Command
+  -- Moongose Fury
   self:newSpell({
     requiredTree = 3,
-    requiredLevel = 10,
-    cooldown = 259489,
-	recharge = 259489,
-    barcolors = {
-      cooldown  = {232/255, 171/255, 131/255, 0.5},
-	  recharge  = {171/255, 191/255, 181/255, 0.6}
-    },
+	requiredTalent = 259387,
+    playerbuff = 259388,
   })
   
-    -- Wildfire Bomb
+  -- Deathblow
   self:newSpell({
     requiredTree = 3,
-    requiredLevel = 20,
-    cooldown = 259495,
-    debuff = 259495,
-	recharge = 259495,
-	refreshable = true,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {212/255, 020/255, 141/255, 0.6},
-	   recharge  = {171/255, 191/255, 181/255, 0.6}
-    },
-  })
-  
-    -- Coordinated Assault
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 40,
-    playerbuff = 266779,
-    cooldown = 266779,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {090/255, 080/255, 090/255, 0.8}
-    },
-  })
-
-  -- Aspect of the Eagle
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 40,
-    playerbuff = 186289,
-    cooldown = 186289,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      playerbuff  = {090/255, 080/255, 090/255, 0.8}
-    },
-  })
-  
-        -- Carve
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 10,
-    cooldown = 187708,
-    barcolors = {
-      cooldown  = {232/255, 171/255, 131/255, 0.5},
-    },
-  })
-
-  --Utility traps are hidden by default, you can choose to enable them by removing the comment brackets
---[[
-  -- Tar Trap
-  self:newSpell({
-    requiredTree = 3,
-    requiredLevel = 36,
-    requiredTalentUnselected = 10,
-    debuff = 135299,
-    cooldown = 187698,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {080/255, 111/255, 070/255, 0.6}
+	requiredTalent = 343248,
+    playerbuff = 343248,
+	barcolors = {
+     playerbuff	= {215/255, 000/255, 000/255, 0.5},
     }
   })
 
-  -- Freezing Trap
+  -- Butchery
   self:newSpell({
     requiredTree = 3,
-    requiredLevel = 18,
-    requiredTalentUnselected = 12,
-    debuff = 3355,
-    cooldown = 187650,
-    barcolors = {
-      cooldown  = {171/255, 191/255, 181/255, 0.5},
-      debuffmine  = {101/255, 050/255, 232/255, 0.6}
+	requiredTalent = 212436,
+    recharge = 212436,
+	debuff = 459870,
+	icon = 212436,
+  })
+  
+  -- Explosive Shot
+  self:newSpell({
+    requiredTree = 3,
+	requiredTalent = 212431,
+    cooldown = 212431,
+    debuff = 212431,
+	barcolors = {
+     cooldown	= {255/255, 168/255, 018/255, 0.5},
     }
   })
---]]
+  
+  -- Flanking Strike
+  self:newSpell({
+    requiredTree = 3,
+    cooldown = 269751,
+  })
+  
+  -- Fury of the Eagle
+  self:newSpell({
+	requiredTree = 3,
+	requiredTalent = 203415,
+	cooldown = 203415,
+	channel = 203415,
+	barcolors = {
+     cooldown	= {171/255, 191/255, 181/255, 0.5},
+    },
+  })
+  
+  -- Spearhead
+  self:newSpell({
+	requiredTree = 3,
+	requiredTalent = 360966,
+	cooldown = 360966,
+	debuff = 360966,
+	barcolors = {
+     cooldown	= {171/255, 191/255, 181/255, 0.5},
+     debuffmine	= {090/255, 080/255, 090/255, 0.8}
+    },
+  })
+  
+  -- Coordinated Assault
+  self:newSpell({
+    requiredTree = 3,
+	requiredTalent = 360952,
+    cooldown = 360952,
+    playerbuff = 360952,
+	barcolors = {
+     cooldown	= {171/255, 191/255, 181/255, 0.5},
+     playerbuff	= {090/255, 080/255, 090/255, 0.8}
+    },
+  })
 
 end

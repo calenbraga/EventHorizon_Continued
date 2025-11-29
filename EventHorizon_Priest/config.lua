@@ -5,9 +5,11 @@ function EventHorizon:InitializeClass()
   self.config.past = -1.5 -- Number of seconds to show in the past. Default = -3
   self.config.future = 12 -- Number of seconds to show in the future. Default = 12
 
+  -- ---------------------------------------
   -- Discipline
+  -- ---------------------------------------
 
-  -- Shadow Word: Pain with Smite cast and Penance CD at half height.
+    -- Shadow Word: Pain with Smite cast and Penance CD at half height.
   self:newSpell({
     requiredTree = 1,
     requiredLevel = 4,
@@ -133,18 +135,11 @@ function EventHorizon:InitializeClass()
     cooldown = 34433,
   })
 
-  --[[ Atonement
-  self:newSpell({
-    requiredTree = 1,
-    requiredLevel = 8,
-    playerbuff = 194384,
-    auraunit = usemouseover and 'mouseover' or 'target',
-    refreshable = true,
-  })
-]]
-
+  
+  -- ---------------------------------------
   -- Holy
-
+  -- ---------------------------------------
+  
   --Holy Fire
     self:newSpell({
     requiredTree = 2,
@@ -231,140 +226,141 @@ function EventHorizon:InitializeClass()
      },
   })
 
+  -- ---------------------------------------
   -- Shadow
+  -- ---------------------------------------
 
-  -- Devouring Plague
+--[[  -- Mind Flay
   self:newSpell({
     requiredTree = 3,
-    cast = 335467,
-    debuff = {335467, 3},
-    refreshable = true,
-    smallCooldown = true,
-    recast = true,
-     barcolors   = {
-     cooldown    = {202/255, 161/255, 050/255, 0.7},
-     channeltick = {232/255, 000/255, 000/255, 0.7},
-     debuffmine  = {000/255, 090/255, 101/255, 0.5}
-     },
-  })
-
-  -- Vampiric Touch & Void Torrent channel and CD at half height if you took the talent.
+    channel = {15407, 391403},		--crashes wow
+	playerbuff = 391401,	
+  })]]--
+  
+  -- Vampiric Touch
   self:newSpell({
     requiredTree = 3,
     cast = 34914,
-    channel = {205065, 4},
-    debuff = {34914, 3},
+    debuff = 34914,
     refreshable = true,
-    cooldown = 263165,
-    smallCooldown = true,
-    recast = true,
-     barcolors   = {
-     cooldown    = {202/255, 161/255, 050/255, 0.7},
-     channeltick = {232/255, 000/255, 000/255, 0.7},
-     debuffmine  = {000/255, 090/255, 101/255, 0.5}
-     },
+	barcolors   = {
+     debuffmine	= {145/255, 000/255, 230/255, 0.5}
+    },
   })
-
-  -- Shadow Word: Pain & Void Bolt CD.
+  
+  -- Devouring Plague
   self:newSpell({
     requiredTree = 3,
-    requiredLevel = 4,
-    debuff = {589, 3},
-    cast = 228260,
-    cooldown = 205448,
-    smallCooldown = true,
-     barcolors   = {
-     cooldown    = {242/255, 020/255, 252/255, 0.9},
-     casting     = {242/255, 020/255, 252/255, 0.9},
-     debuffmine  = {252/255, 222/255, 030/255, 0.5}
-     },
+    debuff = 335467,
+    refreshable = true,
+	barcolors   = {
+     debuffmine	= {145/255, 000/255, 230/255, 0.5}
+    },
   })
-
-  -- Mind Blast CD with Mind Flay/Sear channel and Shadowy Insight proc if selected (instant MB).
+  
+  -- Mind Devourer
   self:newSpell({
     requiredTree = 3,
-    requiredTalentUnselected = 3,
-    cast = 8092,
-    channel = {{15407, 4}, {48045,4}},
-    cooldown = 8092,
-    playerbuff = 124430,
-    icon = 8092,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.6},
-     playerbuff  = {252/255, 202/255, 121/255, 0.7},
-     channeltick = {232/255, 000/255, 000/255, 0.7}
-     },
+	requiredTalent = 373202,
+    playerbuff = 373202,
+	barcolors   = {
+     playerbuff	= {145/255, 000/255, 230/255, 0.5}
+    },
   })
-
-  -- Shadow Word: Void recharge with Mind Flay/Sear channel and Shadowy Insight proc if selected (instant SW:V).
+  
+  -- Shadowy Insight
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 3,
-    cast = 205351,
-    channel = {{15407, 4}, {48045,4}},
-    recharge = 205351,
-    playerbuff = 124430,
-    icon = 8092,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.6},
-     playerbuff  = {252/255, 202/255, 121/255, 0.7},
-     channeltick = {232/255, 000/255, 000/255, 0.7}
-     },
-  })
-
-  -- Shadow Word: Death
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 14,
-    recharge = 32379,
-    icon = 32379,
-     barcolors    = {
-     recharge     = {212/255, 000/255, 000/255, 0.7},
-     },
-  })
-
-  -- Shadow Crash
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 15,
-    cast = 205385,
-    cooldown = 205385,
-    barcolors    = {
-      cooldown   = {171/255, 191/255, 181/255, 0.6},
+	requiredTalent = 375888,
+    playerbuff = 375888,
+	barcolors   = {
+     playerbuff	= {145/255, 000/255, 230/255, 0.5}
     },
   })
 
-  -- Dark Void
+  -- Void Torrent + Void Volley
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 9,
-    cast = 263346,
-    cooldown = 263346,
-     barcolors   = {
-     cooldown    = {171/255, 131/255, 222/255, 0.6},
-     },
+    requiredTalent = 263165,
+	cooldown = 263165,
+	channel = 263165,
+	playerbuff = 1242171,
+	barcolors   = {
+	 cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {145/255, 000/255, 230/255, 0.5},
+    },
   })
-
-  -- Shadowfiend / Mindbender with Voidform buff, for the stack count, plus Lingering Sanity, also for the stack count.
+  
+  -- Dark Ascenion
   self:newSpell({
     requiredTree = 3,
-    playerbuff =  {{194249}, {197937}},
-    cooldown = {200174, 34433},
-    smallCooldown = true,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     playerbuff  = {252/255, 151/255, 222/255, 0.4}
-     },
+	requiredTalent = 391109,
+	cooldown = 391109,
+    playerbuff = 391109,
+	cast = 391109,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {145/255, 000/255, 230/255, 0.5},
+    },
   })
-
-  -- Dark Ascention
+  
+  -- Halo
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 20,
-    cooldown = 280711,
-     barcolors   = {
-     cooldown    = {171/255, 191/255, 181/255, 0.7},
-     },
+	requiredTalent = 120644,
+	cooldown = 120644,
+	playerbuff = 453113,
+	cast = 120644,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {145/255, 000/255, 230/255, 0.5},
+    },
   })
-
+  
+  -- Voidform
+  self:newSpell({
+    requiredTree = 3,
+	requiredTalent = 228260,
+	cooldown = 228260,
+    playerbuff = 194249,
+	cast = 228260,
+	refreshable = true,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {145/255, 000/255, 230/255, 0.5},
+    },
+  })
+  
+  -- Power Infusion
+  self:newSpell({
+    requiredTree = 3,
+    requiredTalent = 10060,
+	cooldown = 10060,
+    playerbuff = 10060,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+     playerbuff	= {255/255, 168/255, 018/255, 0.5},
+    },
+  })
+  
+  -- Shadowfiend + Voidwrath
+  self:newSpell({
+    requiredTree = 3,
+	requiredTalentUnselected = 200174,
+	cooldown = {34433, 451235},
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+    },
+  })
+  
+  -- Mindbender
+  self:newSpell({
+    requiredTree = 3,
+	requiredTalent = 200174,
+	cooldown = 200174,
+	barcolors   = {
+     cooldown	= {171/255, 191/255, 181/255, 0.7},
+    },
+  })
+  
 end

@@ -6,12 +6,16 @@ function EventHorizon:InitializeClass()
   self.config.past = -1.5 -- Number of seconds to show in the past. Default = -3
   self.config.future = 12 -- Number of seconds to show in the future. Default = 12
 
-  -- [[ Brewmaster ]] --
+  -- ---------------------------------------
+  -- Brewmaster
+  -- ---------------------------------------
+  
   -- keg smash
   self:newSpell({
     requiredTree = 1,
     cooldown = 121253,
     debuff = 121253,
+	recharge = 121253,
   })
   
   -- breath of fire
@@ -21,239 +25,143 @@ function EventHorizon:InitializeClass()
     debuff = 115181,
   })
   
-  -- blackout strike
+  -- Purifying Brew
   self:newSpell({
     requiredTree = 1,
-    cooldown = 205523,
-  })
-
-  -- chi wave
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 2,
-    cooldown = 115098,
+    cooldown = 119582,
+    recharge = 119582,
   })
   
-  -- chi burst
+  -- Celestial Infusion
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 3,
-    cooldown = 123986,
-  })
-
-  -- rushing jade wind
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 17,
-    cooldown = 116847,
-    playerbuff = 116847,
-  })
-
-  -- ironskin brew
-  self:newSpell({
-    requiredTree = 1,
-    recharge = 115308,
-    playerbuff = 215479,
-    refreshable = true,
-  })  
-  
-  -- healing elixir
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 14,
-    recharge = 122281
-  })
-
-  -- Guard
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 20,
-    cooldown = 115295,
-    playerbuff = 115295
+	requiredTalent = 1241059,
+    cooldown = 1241059,
+    recharge = 1241059,
   })
   
-  --dampen harm
+  -- Celestial Brew
   self:newSpell({
     requiredTree = 1,
-    requiredTalent = 15,
-    cooldown = 122278
-  })
-
-  -- invoke niuzau, the black ox
-  self:newSpell({
-    requiredTree = 1,
-    requiredTalent = 18,
-    cooldown = 132578
+	requiredTalent = 322507,
+    cooldown = 322507,
+    recharge = 322507,
   })
   
-
-  -- fortifying brew
+  -- Niuzao
   self:newSpell({
     requiredTree = 1,
-    cooldown = 115203
+	requiredTalent = 132578,
+    cooldown = 132578,
+    playerbuff = 132578,
   })
-
-  --zen meditation
+  
+  -- Black Ox Brew
   self:newSpell({
     requiredTree = 1,
-    cooldown = 115176
+	requiredTalent = 115399,
+    cooldown = 115399,
   })
-
-  -- summon black ox statue
-  -- self:newSpell({
-  --   requiredTree = 1,
-  --   requiredTalent = 11,
-  --   cooldown = 115315,
-  -- })   
-
-  -- [[ Mistweaver ]] --
-  -- renewing mist
+  
+  -- Fortifying Brew
   self:newSpell({
-    requiredTree = 2,
-    recharge = 115151
+    requiredTree = 1,
+	requiredTalent = 115203,
+    cooldown = 115203,
+    playerbuff = 120954,
   })
-
-  -- lifecycles
+  
+  -- Exploding Keg
   self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 7,
-    playerbuff = {{197919}, {197916}},
-  })
-
-  -- essence font
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 191837
-  })
-
-  -- chi wave
-  self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 2,
-    cooldown = 115098
-  })
-
-  -- chi burst
-  self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 3,
-    cast = 123986,
-    cooldown = 123986
+    requiredTree = 1,
+	requiredTalent = 325153,
+    cooldown = 325153,
+    debuff = 325153,
   })
  
-  --thunder focus tea
+  -- Weapons of Order
   self:newSpell({
-    requiredTree = 2,
-    cooldown = 116680,
-    playerbuff = 116680
+    requiredTree = 1,
+	requiredTalent = 387184,
+    cooldown = 387184,
+    debuff = 387184,
   })
 
-  -- mana tea
-  self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 9,
-    cooldown = 197908,
-    playerbuff = 197908
-  })
+  
 
-  -- invoke Chi-Ji
-  self:newSpell({
-    requiredTree = 2,
-    requiredTalent = 18,
-    cooldown = 198664
-  })
+  -- ---------------------------------------
+  -- Mistweaver
+  -- ---------------------------------------
+  
+  
 
-  -- rising sun kick
-  self:newSpell({
-    requiredTree = 2,
-    cooldown = 107428,
-    playerbuff = 202090,
-    icon = 107428
-  })
-
-  -- [[ Windwalker ]] --
-  -- Fist of the White Tiger
+  -- ---------------------------------------
+  -- Windwalker
+  -- ---------------------------------------
+  
+  -- Free Crane
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 8,
-    cooldown = 261947,
-  })
-
-  -- Fists of Fury
-  self:newSpell({
-    requiredTree = 3,
-    cooldown = 113656,
-    channel = 113656,
+	requiredTalent = 325201,
+    playerbuff = 325202,
+	icon = 101546,
   })
   
-  -- rising sun kick
+  -- Blackout Kick!
   self:newSpell({
     requiredTree = 3,
-    cooldown = 107428,
-  })
+    playerbuff = 116768,
+  })  
   
-  -- whirling dragon punch
+  -- Strike of the Windlord
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 20,
-    cooldown = 152175,
-  })
-  
-  -- chi wave
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 2,
-    cooldown = 115098,
-  })
-  
-  -- chi burst
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 3,
-    cooldown = 123986,
+	requiredTalent = 392983,
+    cooldown = 392983,
+	playerbuff = 393565,
   })
 
-  -- Energizing Elixir
+  -- Slicing Winds
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 9,
-    cooldown = 115288
+	requiredTalent = 1217413,
+    cooldown = 1217413,
   })
 
-  -- Touch of Death
+--[[ -- Celestial Conduit
   self:newSpell({
     requiredTree = 3,
-    cooldown = 115080,
-  })
-
+    requiredTalent = 443028,
+    cooldown = 443028,
+  })]]--
+  
   -- Storm, Earth and Fire
   self:newSpell({
     requiredTree = 3,
-    requiredTalentUnselected = 21,
+    requiredTalent = 137639,
     cooldown = 137639,
     playerbuff = 137639,
-  })
-
-  -- serenity
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 21,
-    cooldown = 152173,
-    playerbuff = 152173,
-  })
-
-  -- tiger
-  self:newSpell({
-    requiredTree = 3,
-    requiredTalent = 18,
-    cooldown = 123904,
+	recharge = 137639,8
   })
   
-  -- energizing elixir
+  -- Xuen
   self:newSpell({
     requiredTree = 3,
-    requiredTalent = 7,
-    cooldown = 115288,
+    requiredTalent = 123904,
+    cooldown = 123904,
+	playerbuff = 460127,
+  })
+
+
+
+  -- ---------------------------------------
+  -- Shared Cooldowns
+  -- ---------------------------------------
+  
+  -- Touch of Death
+  self:newSpell({
+    cooldown = 322109,
+	playerbuff = 450832,
   })
   
 end
