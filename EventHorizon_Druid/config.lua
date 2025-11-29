@@ -132,17 +132,25 @@ function EventHorizon:InitializeClass()
     },
   })
   
-  -- Bloodtalons + convoke CD
+  -- Bloodtalons 
   self:newSpell({
     requiredTree = feral,
     requiredTalent = 319439,
     stance = cat,
-    cooldown = 391528,
     playerbuff = 319439,
     barcolors = {
      playerbuff  = {030/255, 131/255, 000/255, 0.5}
     },
   })
+  
+ -- Convoke the Spirits CD
+  self:newSpell({
+    requiredTree = feral,
+    requiredTalent = 391528,
+    stance = cat,
+    cooldown = 391528,
+  })
+
 
   -- Berserk
   self:newSpell({
@@ -161,6 +169,18 @@ function EventHorizon:InitializeClass()
     stance = cat,
     cooldown = 102543,
     playerbuff = 102543,
+  })
+
+  -- Shadowmeld
+  self:newSpell({
+    requiredTree = feral,
+    stance = cat,
+    playerbuff = 58984,
+    cooldown = 58984,
+     barcolors = {
+     playerbuff  = {141/255, 070/255, 030/255, 0.6},
+     cooldown    = {171/255, 191/255, 181/255, 0.6}
+    }
   })
 
   -- Omen/Moment of Clarity & Survival Instinct recharge
