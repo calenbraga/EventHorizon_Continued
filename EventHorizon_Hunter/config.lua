@@ -12,7 +12,138 @@ function EventHorizon:InitializeClass()
   -- Beastmaster
   -- ---------------------------------------
   
+  -- Barbed Shot
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 10,
+    playerbuff = {272790, 1.6 },
+    recharge = 217200,
+    auraunit = 'pet',
+    refreshable = true,
+    barcolors = {
+      cooldown  = {255/255, 003/255, 062/255, 0.5},
+      playerbuff  = {171/255, 191/255, 181/255, 0.5}
+    }
+  })
   
+  -- Murder of Crows
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 12,
+    debuff = 131894,
+    cooldown = 131894,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+      debuffmine  = {029/255, 041/255, 081/255, 0.6}
+    }
+  })
+  
+  -- Aspect of the Wild
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 26,
+    playerbuff = 193530,
+    cooldown = 193530,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+      playerbuff  = {000/255, 141/255, 003/255, 0.7}
+    }
+  })
+  
+  -- Bestial Wrath
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 40,
+    playerbuff = 19574,
+    cooldown = 19574,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+      playerbuff  = {171/255, 000/255, 040/255, 0.7}
+    }
+  })
+
+  -- Kill Command
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 10,
+    cooldown = 34026,
+    barcolors = {
+      cooldown  = {232/255, 171/255, 131/255, 0.5},
+    }
+  })
+  
+  -- Chimaera Shot
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 6,
+    cooldown = 53209,
+    barcolors = {
+      cooldown  = {141/255, 000/255, 242/255, 0.5},
+    }
+  })
+
+  -- Dire Beast
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 12,
+    requiredTalent = 3,
+    playerbuff = 217200,
+    cooldown = 120679,
+    auraunit = 'pet',
+    refreshable = true,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+      playerbuff  = {255/255, 003/255, 062/255, 0.5}
+    }
+  })
+
+  -- Multishot with Titanstrike CD at half height
+  self:newSpell({
+    requiredTree = 1,
+    requiredLevel = 16,
+    playerbuff = 115939,
+	smallCooldown = true,
+    auraunit = 'pet',
+    barcolors = {
+      cooldown  = {202/255, 161/255, 055/255, 0.5},
+      playerbuff  = {136/255, 045/255, 023/255, 0.7}
+    }
+  })
+
+  -- Barrage
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 17,
+    playerbuff = {8936,2},
+    cooldown = 120360,
+    channel = 120360,
+    barcolors = {
+      casting    = {027/255, 147/255, 228/255, 1.0},
+      cooldown  = {171/255, 191/255, 181/255, 0.5}
+    }
+  })
+
+  -- Stampede
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 18,
+    cooldown = 201430,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+    }
+  })
+  
+  -- Spitting Cobra
+  self:newSpell({
+    requiredTree = 1,
+    requiredTalent = 21,
+    playerbuff = 194407,
+    cooldown = 194407,
+    barcolors = {
+      cooldown  = {171/255, 191/255, 181/255, 0.5},
+      playerbuff  = {212/255, 020/255, 141/255, 0.6}
+    }
+  })
   
   -- ---------------------------------------
   -- Marksmanship
