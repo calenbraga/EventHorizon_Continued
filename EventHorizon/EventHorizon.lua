@@ -1582,12 +1582,13 @@ end
 local SpellFrame_PLAYER_TOTEM_UPDATE = function ( self, slot )
 
     if not ( self.totem ) then return end
-    local tUp, tName, tStart, tDuration, tIcon = GetTotemInfo( slot )
-    if not tUp or tName ~= GetSpellInfo( self.totem ) then return end
+    local tUp, tName, tStart, tDuration, tIcon, tModRate, tSpellID = GetTotemInfo(slot)
+    if not tUp or tSpellID ~= self.totem then return end
 
     local now = GetTime()
 
-    local name, icon, count, duration, expirationTime, source, spellID = tName, tIcon, 1, tDuration, tStart + tDuration, "player", tID
+    local name, icon, count, duration, expirationTime, source, spellID = tName, tIcon, 1, tDuration, tStart + tDuration,
+      "player", tSpellID
     local addnew
 
     if name then
@@ -2895,6 +2896,12 @@ local mainframe_UPDATE_SHAPESHIFT_FORM = function (self)
     end
   else
     mainframe:Hide()
+  end
+
+  if class == "SHAMAN" then
+    for i = 1, MAX_TOTEMS do
+      mainframe:PLAYER_TOTEM_UPDATE(i)
+    end
   end
 
   return true
